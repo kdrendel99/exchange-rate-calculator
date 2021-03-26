@@ -1,15 +1,15 @@
 export default class CurrencyConversion {
-  static getConversion(dollars,currency) {
+  static getConversion() {
     return fetch(`https://v6.exchangerate-api.com/v6/89a8362dd064dd5ee720a9d2/latest/USD`)
       .then(function(response) {
         if (!response.ok) {
           throw Error(response.statusText);
         }
-        console.log("test")
-        return response.json()
+        console.log(response.statusText);
+        return response.json();
       })
       .catch(function(error){
         return Error(error);
-      })
+      });
   }
 }
