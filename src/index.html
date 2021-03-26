@@ -1,13 +1,35 @@
 <!DOCTYPE html>
 <html lang="en-US">
-
-<head>
-  <title>Document</title>
-  <!-- When change this title must change title in webpack.config.js plugins section and in package.json -->
-</head>
-
-<body>
-
-</body>
-
+  <head>
+    <title>Currency Conversion</title>
+  </head>
+  <body>
+    <br>
+    <br>
+    <div class="container">
+      <div class="jumbotron">
+        <h1>Currency Conversion Calculator</h1>
+        <form id="page">
+          <div class="form-group">
+            <label for="dollars">Enter a dollar amount: </label>
+            <input id="dollars" class="form-control" type="text">
+            <select class="form-control" id="currency">
+              <option value="CAD">Canadian Dollars</option> (CAD)
+              <option value="MXN">Mexican Pesos</option>(MXN)
+              <option value="GBP">Pound Sterling</option>(GBP)
+              <option value="EUR">Euros</option>(EUR)
+              <option value="CZK">Crowns</option>(CZK)
+              <option value="RUB">Russian Rubles</option>(RUB)
+              <option value="CNY">Chinese Yuan</option>(CNY)
+              
+            </select>
+          </div>
+          <button class="btn-success" id="submitButton" button type='button'>Submit</button>
+        </form>
+        <p class="currency-conversion">
+        </p>
+      </div>
+    </div>
+  </body>
+  <br>
 </html>
