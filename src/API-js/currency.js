@@ -3,8 +3,13 @@ export default class CurrencyConversion {
     return fetch(`https://v6.exchangerate-api.com/v6/89a8362dd064dd5ee720a9d2/latest/USD`)
       .then(function(response) {
         if (!response.ok) {
-          throw Error(response.statusText)
+          throw Error(response.statusText);
         }
+        console.log("test")
+        return response.json()
+      })
+      .catch(function(error){
+        return Error(error);
       })
   }
 }
