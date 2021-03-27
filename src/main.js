@@ -17,6 +17,10 @@ function displayErrors(error) {
   $('.show-errors').text(`${error}`);
 }
 
+function selectOther(){
+  $('.badSelection').text("This application is designed for only seven currencies. Please select one of the available for an exchange rate.");
+}
+
 $(document).ready(function() {
   $('#submitButton').click(function(){
     const dollars = $('#dollars').val();
@@ -28,11 +32,15 @@ $(document).ready(function() {
         if (apiResponse instanceof Error) {
           throw Error(`Conversion API error: ${apiResponse.message}`);
         }
-        // let path = require('path');
-        // let apiCurrencyValue = path.join('apiResponse.conversion_rates.',(currency));
-        let apiCurrencyValue = apiResponse.conversion_rates[currency];
-        displayConversion(dollars,apiCurrencyValue,currency);
+        if (currency === 'other'){
+          selectOther();
+        }
+        if (currency !== 'other') {
+          let apiCurrencyValue = apiResponse.conversion_rates[currency];
+          displayConversion(dollars,apiCurrencyValue,currency);
+        } 
       })
+    
       .catch(function(error){
         displayErrors(error.message);
       });

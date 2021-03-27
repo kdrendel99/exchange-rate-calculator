@@ -1,10 +1,6 @@
-## _THIS PROJECT IS AN ENVIRONMENT TEMPLATE FOR FUTURE PROJECTS_
+# _Exchange Rate Calculator_
 
-## _This project is not in a complete or portfolio ready state, and should not be considered representational of professional work._
-
-# _Application Name_
-
-#### _Brief description of application_
+#### _This application uses API's to determine the going exchange rate between currencies, and returns that to the user._
 
 #### _By **Karlson Drendel**_
 
