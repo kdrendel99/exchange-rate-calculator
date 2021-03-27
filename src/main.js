@@ -27,9 +27,9 @@ $(document).ready(function() {
         if (apiResponse instanceof Error) {
           throw Error(`Conversion API error: ${apiResponse.message}`);
         }
-        let path = require('path');
-        let apiCurrencyValue = path.join('apiResponse.conversion_rates.',(currency));
-        // let apiCurrencyValue = apiResponse.conversion_rates.append(currency);
+        // let path = require('path');
+        // let apiCurrencyValue = path.join('apiResponse.conversion_rates.',(currency));
+        let apiCurrencyValue = apiResponse.conversion_rates[currency];
         displayConversion(dollars,apiCurrencyValue,currency);
       })
       .catch(function(error){
