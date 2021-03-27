@@ -9,6 +9,7 @@ export default class CurrencyConversion {
         return response.json();
       })
       .catch(function(error){
+        console.log('help')
         return Error(error);
       });
   }

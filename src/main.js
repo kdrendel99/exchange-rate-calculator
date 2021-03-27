@@ -8,9 +8,8 @@ function clearField() {
   $('#dollars').val("");
 }
 
-function displayConversion(apiCurrencyValue) {
-  //Currently attempting to just get the conversion number to display from API when currency is selected
-  $('.currency-conversion').text(`The amount you entered you entered is equal to ${apiCurrencyValue}!`);
+function displayConversion(dollars, apiCurrencyValue, currency) {
+  $('.currency-conversion').text(`${dollars} is equal to ${apiCurrencyValue} ${currency}`);
 }
 
 function displayErrors(error) {
@@ -28,9 +27,10 @@ $(document).ready(function() {
         if (apiResponse instanceof Error) {
           throw Error(`Conversion API error: ${apiResponse.message}`);
         }
-        const apiCurrencyValue = 
-        apiResponse.conversion_rates.CAD;
-        displayConversion(apiCurrencyValue);
+        let path = require('path');
+        let apiCurrencyValue = path.join('apiResponse.conversion_rates.',(currency));
+        // let apiCurrencyValue = apiResponse.conversion_rates.append(currency);
+        displayConversion(dollars,apiCurrencyValue,currency);
       })
       .catch(function(error){
         displayErrors(error.message);
