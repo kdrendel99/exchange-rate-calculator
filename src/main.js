@@ -9,7 +9,8 @@ function clearField() {
 }
 
 function displayConversion(dollars, apiCurrencyValue, currency) {
-  $('.currency-conversion').text(`${dollars} is equal to ${apiCurrencyValue} ${currency}`);
+  let converted = (dollars * apiCurrencyValue).toFixed([2]);
+  $('.currency-conversion').text(`${dollars} is equal to ${converted} ${currency}'s`);
 }
 
 function displayErrors(error) {
