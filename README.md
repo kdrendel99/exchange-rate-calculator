@@ -46,35 +46,22 @@
 
 ## Description <a id="description"></a>
 
-_This is a detailed description of your application. Give as much detail as needed to explain what the application does as well as any other information you want users or other developers to have. Balance between a summary of the project and a tame market pitch._
+_Exchange rate Calculator is used to determine the current exchange rate for USD around the world._
+
 
 ## Setup/Installation Requirements <a id="setup"></a>
 
-* _Open the terminal on your local machine_
-* _If [Node.js](https://nodejs.org/en/) and [Nope Package Manager (npm)](https://www.npmjs.com/) are not installed on your local device, follow the instructions [here](https://www.learnhowtoprogram.com/intermediate-javascript/getting-started-with-javascript/installing-node-js)_
-* _Navigate to the directory inside of which you wish to house this project_
-* _Clone this project with the following git command `$ git clone <https://github.com/kdrendel99/project>`_
-* _Navigate to the top level of the repository with the command `$ cd project`_
-* _Recreate project environment and install required dependencies with terminal command `$ npm install`_
-* _Create production environment with terminal command `$ npm run build`_
-* _Open project in a development server in the browser of your choice with the command `$ npm run start`_
-* _Lint code with the command `$ npm run lint`_
-* _Run tests in Jest with the command `$ npm test`_
-
-## Additional Setup/Installation Note for Windows Users <a id="windows"></a>
-
-_This environment was created on a Mac. For it to work properly in your local environment make the following change:_
-* _Update package.json, line 8 to: `"start": "npm run build & webpack-dev-server --open --mode development",`_
-
-## Specifications <a id="specs"></a>
-
-| Behavior | Input | Output |
-|:---:|:---:|:---:|
-| The program should handle... | When it receives... | It should return... |
+* _Open terminal_
+* _Install Node [here](https://nodejs.org/en/) and npm [here](https://www.npmjs.com/).
+* _Clone this project with the following git command `$ git clone https://github.com/kdrendel99/Galactic-Age-Calculator.git`_
+* _install dependencies using the terminal command `$ npm install`, followed by `$ npm run build`_
+* _If you'd like to open a project live server, use the command `$ npm run start`_
+* _Run tests using Jest with `$ npm test` in the terminal_
+* _Check code for errors with `$ npm run lint`_
 
 ## Known Bugs <a id="bugs"></a>
-* _Any known issues_
-* _should go here_
+* _No known bugs!_
+
 
 ## License <a id="license"></a>
 *[MIT](https://choosealicense.com/licenses/mit/)*
@@ -82,4 +69,4 @@ _This environment was created on a Mac. For it to work properly in your local en
 Copyright (c) **_2021 Karlson Drendel_**
 
 ## Contact Information <a id="contact"></a>
-**_Karlson Drendel [mailto](mailto:kdrendel99@gmail.com)_**
+**_Karlson Drendel kdrendel99@gmail.com_**
