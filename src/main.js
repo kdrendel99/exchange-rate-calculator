@@ -17,23 +17,38 @@ function displayErrors(error) {
   $('.show-errors').text(`${error}`);
 }
 
+function invalidEntry(){
+  $('.show-errors').text('Please enter a valid number.');
+}
+
 function selectOther() {
   $('.badSelection').text("This application is designed for only seven currencies. Please select one of the available for an exchange rate.");
 }
 
+function clearDom(){
+  $('.currency-conversion').text('');
+
+}
+
 $(document).ready(function() {
   $('#submitButton').click(function() {
-    const dollars = $('#dollars').val();
+    clearDom();
+    const dollars = parseFloat($('#dollars').val());
     let currency = $("#currency").val();
     clearField();
+    if (currency === 'other'){
+      selectOther();
+      return;
+    }
+    if (isNaN(dollars)){
+      invalidEntry();
+      return;
+    }
     displayConversion(dollars, currency);
     CurrencyConversion.getConversion(dollars, currency)
       .then(function(apiResponse) {
         if (apiResponse instanceof Error) {
           throw Error(`Conversion API error: ${apiResponse.message}`);
-        }
-        if (currency === 'other') {
-          selectOther();
         }
         if (currency !== 'other') {
           let apiCurrencyValue = apiResponse.conversion_rates[currency];
