@@ -10,13 +10,16 @@ function clearField() {
 
 function displayConversion(dollars, apiCurrencyValue, currency) {
   let converted = (dollars * apiCurrencyValue).toFixed([2]);
-  $('.currency-conversion').text(`$${dollars} is equal to ${converted} ${currency}'s`);
+  $('.currency-conversion').text(`$${dollars} USD is equal to ${converted} ${currency}'s`);
 }
 
 function displayErrors(error) {
   $('.show-errors').text(`${error}`);
 }
 
+function badCurrency(currency){
+  $('.show-errors').text(`We apologize, this API no longer supports '${currency}' as a valid currency. Please try another currency.`);
+}
 function invalidEntry(){
   $('.show-errors').text('Please enter a valid number.');
 }
@@ -44,7 +47,6 @@ $(document).ready(function() {
       invalidEntry();
       return;
     }
-    displayConversion(dollars, currency);
     CurrencyConversion.getConversion(dollars, currency)
       .then(function(apiResponse) {
         if (apiResponse instanceof Error) {
@@ -52,6 +54,10 @@ $(document).ready(function() {
         }
         if (currency !== 'other') {
           let apiCurrencyValue = apiResponse.conversion_rates[currency];
+          if (apiCurrencyValue === undefined || apiCurrencyValue.isNaN){
+            badCurrency(currency);
+            return
+          }
           displayConversion(dollars, apiCurrencyValue, currency);
         }
       })

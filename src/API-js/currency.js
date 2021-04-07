@@ -5,7 +5,6 @@ export default class CurrencyConversion {
         if (!response.ok) {
           throw Error(response.statusText);
         }
-        console.log(response.statusText);
         return response.json();
       })
       .catch(function(error){

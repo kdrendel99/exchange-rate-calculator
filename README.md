@@ -53,7 +53,7 @@ _Exchange rate Calculator is used to determine the current exchange rate for USD
 
 * _Open terminal_
 * _Install Node [here](https://nodejs.org/en/) and npm [here](https://www.npmjs.com/).
-* _Clone this project with the following git command `$ git clone https://github.com/kdrendel99/Galactic-Age-Calculator.git`_
+* _Clone this project with the following git command `$ git clone https://github.com/kdrendel99/exchange-rate-calculator.git`_
 *_Create a new file in the main project directory named '.env', and add '.env' to the .gitignore file._
 *_In your browser, navigate to https://www.exchangerate-api.com/  _
 *_Enter your email and click get Free Key. In your .env folder, enter 'API_KEY=' followed by your API key after with no spaces_
