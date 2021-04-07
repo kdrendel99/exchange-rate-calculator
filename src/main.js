@@ -56,7 +56,7 @@ $(document).ready(function() {
           let apiCurrencyValue = apiResponse.conversion_rates[currency];
           if (apiCurrencyValue === undefined || apiCurrencyValue.isNaN){
             badCurrency(currency);
-            return
+            return;
           }
           displayConversion(dollars, apiCurrencyValue, currency);
         }
